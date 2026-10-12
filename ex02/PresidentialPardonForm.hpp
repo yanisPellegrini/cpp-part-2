@@ -11,7 +11,7 @@ class PresidentialPardonForm : public AForm
 		const std::string	_target;
 
 	protected:
-		virtual void		executeAction() const;	// A IMPLEMENTER
+		virtual void		executeAction() const;
 
 	public:
 		PresidentialPardonForm();

@@ -9,7 +9,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& oth
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other) {
 	if (this != &other) {
-		AForm::operator=(other);	// _target est const : on ne copie que la partie AForm
+		AForm::operator=(other);
 	}
 	return *this;
 }
@@ -22,5 +22,5 @@ const std::string& PresidentialPardonForm::getTarget() const {
 
 void PresidentialPardonForm::executeAction() const {
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	//  - afficher : "<_target> has been pardoned by Zaphod Beeblebrox."
+
 }
