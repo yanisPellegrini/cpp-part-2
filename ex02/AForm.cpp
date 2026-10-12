@@ -46,11 +46,13 @@ void AForm::beSigned(const Bureaucrat& b) {
 }
 
 void AForm::execute(Bureaucrat const & executor) const {
-	// TODO (ex02) : la methode "elegante" -> toutes les verifications ICI, une seule fois.
-	//  1. si le formulaire n'est pas signe          -> throw FormNotSignedException();
-	//  2. si le grade de executor est trop faible   -> throw GradeTooLowException();
-	//     (meme comparaison que beSigned, mais avec _gradeTE)
-	//  3. sinon -> executeAction();  (appel virtuel : c'est la version de la classe concrete qui s'execute)
+	if (!_isSigned) {
+		throw FormNotSignedException();
+	}
+	if (executor.getGrade() > _gradeTE) {
+		throw GradeTooLowException();
+	}
+	executeAction();
 	(void)executor;
 }
 

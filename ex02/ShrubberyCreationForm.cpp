@@ -22,9 +22,35 @@ const std::string& ShrubberyCreationForm::getTarget() const {
 }
 
 void ShrubberyCreationForm::executeAction() const {
-	// TODO (ex02)
-	//  - creer le fichier "<_target>_shrubbery" : std::ofstream, nom = (_target + "_shrubbery").c_str()  (C++98 !)
-	//  - verifier que le fichier est bien ouvert (sinon : message d erreur ou exception)
-	//  - ecrire des arbres en ASCII dedans avec <<
-	//  - le fichier se ferme tout seul a la fin (destructeur de ofstream)
+	std::ofstream ofs((_target + "_shrubbery").c_str());
+	if (!ofs.is_open())
+		throw std::runtime_error("Failed to open file " + _target + "_shrubbery");
+	if (ofs.fail())
+		throw std::runtime_error("Failed to write to file " + _target + "_shrubbery");
+	ofs << "            .        +          .      .          ." << std::endl;
+	ofs << "     .            _        .                    ." << std::endl;
+	ofs << "  ,              /;-._,-.____        ,-----.__" << std::endl;
+	ofs << " ((        .    (_:#::_.:::. `-._   /:, /-._, `._," << std::endl;
+	ofs << "  `                 \\   _|`\"=:_::.`.);  \\ __/ /" << std::endl;
+	ofs << "                      ,    `./  \\:. `.   )==-'  ." << std::endl;
+	ofs << "    .      ., ,-=-.  ,\\, +#./`   \\:.  / /           ." << std::endl;
+	ofs << ".           \\/:/`-' , ,\\ '` ` `   ): , /_  -o" << std::endl;
+	ofs << "       .    /:+- - + +- : :- + + -:'  /(o-) \\)     ." << std::endl;
+	ofs << "  .      ,=':  \\    ` `/` ' , , ,:' `'--\".--\"---._/`7" << std::endl;
+	ofs << "   `.   (    \\: \\,-._` ` + '\\, ,\"   _,--._,---\":.__/" << std::endl;
+	ofs << "              \\:  `  X` _| _,\\/'   .-'" << std::endl;
+	ofs << ".               \":._:`\\____  /:'  /      .           ." << std::endl;
+	ofs << "                    \\::.  :\\/:'  /              +" << std::endl;
+	ofs << "   .                 `.:.  /:'  }      ." << std::endl;
+	ofs << "           .           ):_(:;   \\           ." << std::endl;
+	ofs << "                      /:. _/ ,  |" << std::endl;
+	ofs << "                   . (|::.     ,`                  ." << std::endl;
+	ofs << "     .                |::.    {\\" << std::endl;
+	ofs << "                      |::.\\  \\ `." << std::endl;
+	ofs << "                      |:::(\\    |" << std::endl;
+	ofs << "              O       |:::/{ }  |                  (o" << std::endl;
+	ofs << "               )  ___/#\\::`/ (O \"==._____   O, (O  /`" << std::endl;
+	ofs << "          ~~~w/w~\"~~,\\` `:/,-(~`\"~~~~~~~~\"~o~\\~/~w|/~" << std::endl;
+	ofs << "dew   ~~~~~~~~~~~~~~~~~~~~~~~\\\\W~~~~~~~~~~~~\\|/~~" << std::endl;
+	ofs.close();
 }

@@ -56,10 +56,13 @@ void Bureaucrat::signForm(AForm& f) {
 }
 
 void Bureaucrat::executeForm(AForm const & form) const {
-	// TODO (ex02)
-	// Meme principe que signForm :
-	//  - try : appeler form.execute(*this), puis afficher "<bureaucrat> executed <form>"
-	//  - catch : afficher un message d'erreur explicite avec e.what()
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << "." << std::endl;
+	}
 	(void)form;
 }
 

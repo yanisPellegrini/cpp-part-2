@@ -21,6 +21,6 @@ const std::string& PresidentialPardonForm::getTarget() const {
 }
 
 void PresidentialPardonForm::executeAction() const {
-	// TODO (ex02)
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	//  - afficher : "<_target> has been pardoned by Zaphod Beeblebrox."
 }

@@ -15,9 +15,6 @@ class AForm
 		const int			_gradeTE;
 
 	protected:
-		// NOUVEAU (ex02) : l'action propre a chaque formulaire.
-		// "= 0" => fonction virtuelle pure => AForm devient abstraite (non instanciable).
-		// Chaque classe concrete DOIT la redefinir.
 		virtual void		executeAction() const = 0;
 
 	public:
@@ -25,7 +22,7 @@ class AForm
 		AForm(const std::string& name, int gradeTS, int gradeTE);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other);
-		virtual ~AForm();	// virtual : obligatoire des qu'on fait "delete" via un AForm*
+		virtual ~AForm();
 
 		const std::string&	getName() const;
 		bool				isSigned() const;
@@ -45,7 +42,6 @@ class AForm
 		public:
 			virtual const char* what() const throw();
 		};
-		// NOUVEAU (ex02) : execution d'un formulaire non signe
 		class FormNotSignedException : public std::exception
 		{
 		public:

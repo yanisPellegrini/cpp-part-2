@@ -22,9 +22,12 @@ const std::string& RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::executeAction() const {
-	// TODO (ex02)
-	//  - afficher des bruits de perceuse ("* DRILLING NOISES *")
-	//  - 50% du temps (std::rand() % 2) : "<_target> has been robotomized successfully"
-	//  - sinon : "Robotomy on <_target> failed"
-	//  (std::srand(std::time(0)) est deja appele une fois dans le main)
+
+	std::cout << "* DRILLING NOISES *" << std::endl;
+	int randomValue = std::rand() % 2;
+	if (randomValue == 0) {
+		std::cout << _target << " has been robotomized successfully." << std::endl;
+	} else {
+		std::cout << "Robotomy on " << _target << " failed." << std::endl;
+	}
 }
