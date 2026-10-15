@@ -4,7 +4,6 @@
 #include "AForm.hpp"
 #include <string>
 
-// Grades requis : sign 25, exec 5
 class PresidentialPardonForm : public AForm
 {
 	private:
